@@ -13,6 +13,10 @@ public class MyLinkedList<E> implements Iterable<E> {
         this.size = 0;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     //node 정의
     private static class Node<E> {
         private E item;
@@ -118,17 +122,17 @@ public class MyLinkedList<E> implements Iterable<E> {
         return data;
     }
 
-    public void delete(int index) {
+    public E delete(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
 
         if (index == 0) {
-            deleteFirst();
+            return deleteFirst();
         }
 
         if(index == size - 1) {
-            deleteLast();
+            return deleteLast();
         }
 
         Node<E> delNode = searchNode(index);
@@ -146,6 +150,7 @@ public class MyLinkedList<E> implements Iterable<E> {
         prevNode.next = nextNode;
         nextNode.prev = prevNode;
 
+        return data;
     }
 
     @Override
