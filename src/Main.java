@@ -60,12 +60,34 @@ public class Main {
         System.out.println("search(3) test: " + s.search(3));
         System.out.println("search(4) test: " + s.search(4));
 
-        if (!s.isEmpty()) {
-            s.pop();
-            System.out.println("pop() after: " + s);
-        } else {
-            System.out.println("Stack is empty");
-        }
+        System.out.println();
+
+        System.out.println("pop() after" + s);
+        System.out.println("pop() test: " + s.pop());
+        System.out.println("pop() after: " + s);
+
+        System.out.println();
+        System.out.println("====================================================");
+        System.out.println();
+
+        MyQueue<Integer> q = new MyQueue<>();
+
+        System.out.println("Queue가 비어있나? (데이터 enqueue 전): " + q.isEmpty());
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+
+        System.out.println("Queue가 비어있나? (데이터 enqueue 후): " + q.isEmpty());
+        System.out.println();
+
+        System.out.println("dequeue() before: " + q);
+
+        System.out.println("dequeue() test: " + q.dequeue());
+
+        System.out.println("dequeue() after: " + q);
+
+
+
 
     }
 }

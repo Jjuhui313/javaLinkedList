@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class MyStack<E> {
     private MyLinkedList<E> list;
@@ -22,9 +23,11 @@ public class MyStack<E> {
         return data;
     }
     public E pop() {
-        E data = list.get(top);
-        list.delete(top--);
-        return data;
+        if(isEmpty()) {
+            throw new NoSuchElementException("Stack is Empty");
+        }
+
+        return list.delete(top--);
     }
 
     public E peek() {
@@ -38,6 +41,10 @@ public class MyStack<E> {
             }
         }
         return -1;
+    }
+
+    public int size() {
+        return list.getSize();
     }
 
     @Override
