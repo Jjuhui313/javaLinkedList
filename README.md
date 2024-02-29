@@ -1,5 +1,6 @@
 # Java LinkedList 과제
 
+
 ## 필수 요구사항
 
 - [X] add(): MyLinkedList의 마지막 노드에 data를 추가할 수 있다.
